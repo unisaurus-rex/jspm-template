@@ -1,5 +1,6 @@
-# JSPM Proof of Concept
-[jspm](jspm.io) is a package manager that abstracts npm and bower.  In addition it allows us to use [ES6 style module notation](http://exploringjs.com/es6/ch_modules.html) in our JavaScript files.
+# JSPM Project Template 
+This repo contains the basic framework for a project that contains jspm, D3 and bootstrap css.
+
 ## Install
 First, run
 
@@ -15,7 +16,7 @@ Any dev dependencies should be installed with npm.  Any client side dependencies
 ## This Project is a Dev Envrionment
 The files and folders have been organized to support a development workflow.  If you would like to produce a production build, there are npm scripts you can run to install files in the build folder.
 ## Serving the Development Version
-Download your favorite server package of choice ([http-server](https://www.npmjs.com/package/http-server) is nice). Run the server from the root of the project.
+Download your favorite server package of choice ([http-server](https://www.npmjs.com/package/http-server) is nice). 
 ### A Note on JavaScript Modules
 Any module you write needs to be imported in ```scripts/startup.js```, or used by a module imported in ```startup.js```
 ## Custom NPM Scripts
