@@ -1,0 +1,6 @@
+node_modules/**/*
+src/jspm_packages/**/*
+build/**/*
+src/styles/css/*.css
+src/styles/css/maps.css.map
+*.log

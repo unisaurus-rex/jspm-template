@@ -1,0 +1,163 @@
+// Add custom font
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700,300);
+$font-family-base: Foundry Context;
+
+
+
+// Import bootstrap and fontawesome
+@import "custom-variables";
+@import "../../jspm_packages/github/twbs/bootstrap-sass@3.3.7/assets/stylesheets/bootstrap";
+@import "../../jspm_packages/npm/font-awesome@4.6.3/scss/font-awesome";
+
+
+/** Navigation bar across the top of the page **/
+
+//*navbar-brand*//
+//
+//This is where the logo is contained in the upper left corner
+//of the navbar.
+//Make the height inherit in order to have the pixel size of
+//height: 156px and width: 41px show correctly.
+.navbar-brand {
+  height: inherit;
+}
+
+//*navbar-default and navbar-nav//
+//
+//These are the navigation links on the right side
+//of the navbar (Back to iQ, Logout)
+//
+//Adjust margin to have links sit towards the bottom
+//of the navbar (otherwise it sits towards the top)
+//Increase the font-size and change color to Vantiv brand
+//dark gray
+.navbar-default .navbar-nav > li > a {
+  margin-top: 28px;
+  font-size: 20px; 
+  color: $gray-dark;
+}
+
+
+//*navbar-default*//
+//
+//This is the class that controls the styling of the navigation bar
+//across the top of the page (where the logo and navigation links
+//such as Logout and Back to iQ are located) - This class is contained
+//within the page-content-wrapper class
+//
+//Customizations made to change the background color to white, create a box-shadow
+//effect and adjust height to 80 px to make the bar taller
+//and increase the bottom margin to add more space between navbar and
+//content containers
+.navbar-default {
+  background-color: $white;
+  box-shadow: 0px 2px 2px 0px rgba(2, 2, 2, 0.2);
+  height: 80px;
+  margin-bottom: 37px;
+}
+
+/** Page content **/
+
+//This uses CSS3's flexbox layout to make columns within the given row the samw height
+
+
+.container-fluid {
+  padding-left: 26px;
+  padding-right: 36px;
+}
+
+//* Buttons **//
+.btn-link, .btn:hover {
+  border-style: dashed;
+  border-color: $brand-info;
+}
+
+/** Page content **/
+
+//** Panels **//
+
+.panel { //!!!!!!!need to clean up and make modular later!!!!
+  margin: 20px 10px 0 10px;
+  border-radius: 2px;
+  max-height: 600px;
+  font-size: 13px;
+ a{
+  font-size: 12px;
+}
+
+//** Panel Body **//
+// Add height to 100% to keep the panel footer
+// fixed at the bottom.
+.panel-body {
+  height: 100%;
+}
+
+//** Panel Footer **//
+
+//Use for panel footer background brand colors success and danger
+.success{
+  background-color: transparentize($brand-success, 0.85);
+}
+
+
+.danger{
+  background-color: transparentize($brand-danger, 0.85);
+}
+
+
+.alert {
+  margin-bottom: 0px;
+}
+
+
+// Checkboxes in the panel footers
+// using bootstrap btn class and font awesome check
+// icon. Icon will appear when button is active,
+// and disappear when it is not.
+.panel-footer .btn > i.fa {
+    opacity: 0;
+
+}
+
+.panel-footer .btn.active > i.fa {
+    opacity: 1;
+
+}
+
+
+}
+@media only screen and (min-width : 768px) {
+    .flex-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .flex-row > [class*='col-'] {
+        display: flex;
+        flex-direction: column;
+    }
+    .flex-row.row:after,
+    .flex-row.row:before {
+        display: flex;
+    }
+
+    .flex-row .thumbnail,
+.flex-row .caption,
+.flex-row .panel{
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+
+}
+.flex-row .panel-group{
+  overflow-y: auto;
+}
+.flex-row .panel-body{
+  overflow-y: auto;
+}
+.flex-text {
+    flex-grow: 1;
+}
+.flex-row img {
+    width: 100%;
+}
+}

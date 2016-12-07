@@ -1,0 +1,48 @@
+{
+  "name": "poc-jspm-front-end-bootstrap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run bundle-js && npm run bundle-sass && npm run copy-fonts",
+    "bundle-js": "jspm bundle-sfx startup.js build/build.js",
+    "bundle-sass": "node-sass --source-map true --include-path src/styles/sass --output-style compressed --output build/styles/css src/styles/sass/style.scss",
+    "clean-css": "rimraf build/styles/css",
+    "clean-fonts": "rimraf build/styles/fonts",
+    "clean-styles": "npm run clean-css && npm run clean-fonts",
+    "copy-fonts": "copyfiles -u 1 src/styles/fonts/**/* src/styles/fonts/* build/styles",
+    "prebuild": "npm run clean-styles",
+    "sass": "node-sass --source-map true --include-path src/styles/sass --output src/styles/css src/styles/sass/style.scss",
+    "test": "karma start karma.conf.js",
+    "watch-sass": "node-sass --source-map true --watch src/styles/sass --output src/styles/css src/styles/sass/style.scss"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "copyfiles": "^1.0.0",
+    "jasmine": "^2.5.2",
+    "jspm": "^0.16.45",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-jspm": "^2.2.0",
+    "node-sass": "^3.10.1",
+    "rimraf": "^2.5.4"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "src"
+    },
+    "dependencies": {
+      "bootstrap-sass": "github:twbs/bootstrap-sass@^3.3.7",
+      "d3": "npm:d3@^4.4.0",
+      "font-awesome": "npm:font-awesome@^4.6.3",
+      "jquery": "npm:jquery@^3.1.1"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  }
+}
